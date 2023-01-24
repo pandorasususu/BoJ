@@ -25,7 +25,7 @@ def sol(stack):
                 visited[nr][nc] = 1
                 area += 1
                 stack.append([nr, nc])
-    return
+    return area
 
 area_list = []
 for r in range(n):
@@ -33,8 +33,7 @@ for r in range(n):
         if arr[r][c] == 0 and visited[r][c] == 0:
             visited[r][c] = 1
             area = 1
-            sol([[r, c]])
-            area_list.append(area)
+            area_list.append(sol([[r, c]]))
 area_list.sort()
 print(len(area_list))
 print(*area_list)
