@@ -3,10 +3,9 @@ input = stdin.readline
 
 n = int(input())
 one, two = 2, 1
-
 for i in range(1, n):
-    new_two = one + two
-    new_one = new_two + two
-    one, two = new_one, new_two
+    # one, two = (one + 2 * two) % 9901 , (one + two) % 9901
+    one, two = (one + 2 * two) % 9901 , (one + two) % 9901
 
-print((one + two) % 9901)
+# print(one + two)
+print((one + two)%9901)
