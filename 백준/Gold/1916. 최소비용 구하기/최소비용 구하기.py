@@ -4,10 +4,12 @@ input = stdin.readline
 
             
 n, m = int(input()), int(input())
-graph = [[] * (n+1) for _ in range(n+1)]
+graph = [[] for _ in range(n+1)]
+# print(graph)
 for _ in range(m):
     start, end, weight = map(int, input().split())
     graph[start].append((end, weight))
+# print(graph)
 s, e = map(int, input().split())
 distance = [float('inf')] * (n+1)
 def sol(k):
@@ -27,4 +29,5 @@ def sol(k):
                     heapq.heappush(q, (i[0], cnd))
 
 sol(s)
+# print(graph)
 print(distance[e])
